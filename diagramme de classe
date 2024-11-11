@@ -1,0 +1,35 @@
+classDiagram
+    class Point {
+        - double x
+        - double y
+        + Point()
+        + Point(double x1, double y1)
+        + void set_pos(double x1, double y1)
+        + Point add(Point p)
+    }
+
+    class Vecteur {
+        - double x
+        - double y
+        + Vecteur(double x1, double y1)
+        + Vecteur(Point a, Point b)
+        + void set_pos(double x1, double y1)
+        + double norme()
+        + double dot(Vecteur v)
+        + double cross(Vecteur v)
+        + Vecteur negate()
+        + Vecteur dotScalar(double u)
+        + Vecteur sub(Point p)
+    }
+
+    class Segment {
+        - Point origine
+        - Point fin
+        + Segment(Point o, Point f)
+        + void set_pos(Point o, Point f)
+        + Vecteur get_direction()
+        + double longueur()
+    }
+
+    Segment --> Point : utilise
+    Vecteur --> Point : utilise
