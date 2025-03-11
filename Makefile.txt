@@ -1,0 +1,15 @@
+CC = g++
+LDFLAGS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+
+TARGET = game
+SOURCES = .src/main.cpp .src/renderer.cpp .src/inputhandler.cpp .src/grid.cpp .src/FileManager.cpp .src/GameManager.cpp .src/cell.cpp
+
+all: $(TARGET)
+
+$(TARGET):
+	$(CC) -o $(TARGET) $(SOURCES) $(LDFLAGS)
+
+clean:
+	rm -f $(TARGET)
+	
+.PHONY: all clean
